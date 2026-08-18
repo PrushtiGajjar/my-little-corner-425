@@ -10,33 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HistoryRouteImport } from './routes/history'
+import { Route as TirthRouteImport } from './routes/tirth'
+import { Route as VimalnathDadaRouteImport } from './routes/vimalnath-dada'
+import { Route as VisitRouteImport } from './routes/visit'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TirthRoute = TirthRouteImport.update({
+  id: '/tirth',
+  path: '/tirth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VimalnathDadaRoute = VimalnathDadaRouteImport.update({
+  id: '/vimalnath-dada',
+  path: '/vimalnath-dada',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisitRoute = VisitRouteImport.update({
+  id: '/visit',
+  path: '/visit',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/history': typeof HistoryRoute
+  '/tirth': typeof TirthRoute
+  '/vimalnath-dada': typeof VimalnathDadaRoute
+  '/visit': typeof VisitRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/history': typeof HistoryRoute
+  '/tirth': typeof TirthRoute
+  '/vimalnath-dada': typeof VimalnathDadaRoute
+  '/visit': typeof VisitRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/history': typeof HistoryRoute
+  '/tirth': typeof TirthRoute
+  '/vimalnath-dada': typeof VimalnathDadaRoute
+  '/visit': typeof VisitRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/history' | '/tirth' | '/vimalnath-dada' | '/visit'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/history' | '/tirth' | '/vimalnath-dada' | '/visit'
+  id: '__root__' | '/' | '/history' | '/tirth' | '/vimalnath-dada' | '/visit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HistoryRoute: typeof HistoryRoute
+  TirthRoute: typeof TirthRoute
+  VimalnathDadaRoute: typeof VimalnathDadaRoute
+  VisitRoute: typeof VisitRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +88,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tirth': {
+      id: '/tirth'
+      path: '/tirth'
+      fullPath: '/tirth'
+      preLoaderRoute: typeof TirthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vimalnath-dada': {
+      id: '/vimalnath-dada'
+      path: '/vimalnath-dada'
+      fullPath: '/vimalnath-dada'
+      preLoaderRoute: typeof VimalnathDadaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/visit': {
+      id: '/visit'
+      path: '/visit'
+      fullPath: '/visit'
+      preLoaderRoute: typeof VisitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HistoryRoute: HistoryRoute,
+  TirthRoute: TirthRoute,
+  VimalnathDadaRoute: VimalnathDadaRoute,
+  VisitRoute: VisitRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
