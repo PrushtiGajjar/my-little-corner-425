@@ -21,26 +21,22 @@ export const temple = {
 
 export const chapters = [
   {
-    id: "village",
-    eyebrow: "Chapter One",
-    title: "A village of temples",
-    body: "Balsana was known as a village of temples. Eleven shrines of Hanumanji stood within it, one greeting every traveller at the very entrance, and each temple carried an architectural marvel of its own.",
-  },
-  {
     id: "sangam",
-    eyebrow: "Chapter Two",
     title: "Where three rivers meet",
     body: "To the north, the Kesar flows down to meet the Khari, and together they merge ahead with the Burai. At this Triveni Sangam stands the three-storied Tapeshwar Mahadev temple, with the Sati Stambh to its left and the samadhi of Navnarh Baba nearby.",
   },
   {
+    id: "village",
+    title: "A village of temples",
+    body: "Balsana was known as a village of temples. Eleven shrines of Hanumanji stood within it, one greeting every traveller at the very entrance, and each temple carried an architectural marvel of its own.",
+  },
+  {
     id: "stone",
-    eyebrow: "Chapter Three",
     title: "The stone in the path",
     body: "A simple, poor villager left his home each day and, only a few steps out, hurt his feet on some protruding stone. He asked his friends to help him clear and dig that patch of earth.",
   },
   {
     id: "revelation",
-    eyebrow: "Chapter Four",
     title: "The pratimaji revealed itself",
     body: "Before the villagers returned with their tools, something emerged from the ground on its own — the pratimaji of Vimalnath Dada. A sculpture ten or fifteen men would struggle to lift, this one man raised with ease and set gently aside.",
   },

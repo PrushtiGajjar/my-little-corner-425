@@ -28,12 +28,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const gallery = [
-    { src: sanctum, alt: "Sanctum of Balsana Vimalnath Tirth at night" },
-    { src: tirthImg, alt: "The tirth complex lit after dusk" },
-    { src: rivers, alt: "Kesar, Khari and Burai rivers meeting" },
-    { src: village, alt: "Balsana village of temples at dusk" },
-  ];
+
   const tl = useReveal<HTMLDivElement>();
 
   return (
@@ -41,7 +36,7 @@ function Home() {
       {/* Hero */}
       <section className="relative flex h-screen items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
+          className="absolute inset-0 bg-cover bg-[center_top_10%] md:bg-center opacity-40"
           style={{ backgroundImage: `url(${sanctum})` }}
           aria-hidden="true"
         />
@@ -54,14 +49,14 @@ function Home() {
         <div className="relative z-10 px-6 text-center">
           <p className="eyebrow animate-rise">{temple.age} of devotion</p>
           <h1
-            className="animate-rise mt-5 text-5xl leading-[1.05] text-marble sm:text-7xl"
+            className="animate-rise mt-5 text-3xl leading-[1.1] text-marble sm:text-5xl md:text-7xl"
             style={{ animationDelay: "0.1s" }}
           >
             Shri Vimalnath Dada
             <span className="block text-gold">of Balsana</span>
           </h1>
           <p
-            className="animate-rise mx-auto mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground"
+            className="animate-rise mx-auto mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground"
             style={{ animationDelay: "0.2s" }}
           >
             A pratimaji that rose from the earth of a small village, and turned
@@ -73,19 +68,19 @@ function Home() {
           >
             <Link
               to="/history"
-              className="rounded-full border border-primary/50 px-6 py-2.5 text-xs tracking-[0.2em] uppercase text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="rounded-full border border-primary/50 px-6 py-2.5 text-sm tracking-[0.2em] uppercase text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
             >
               Read the history
             </Link>
             <Link
               to="/visit"
-              className="rounded-full border border-border px-6 py-2.5 text-xs tracking-[0.2em] uppercase text-muted-foreground transition-colors hover:text-marble"
+              className="rounded-full border border-border px-6 py-2.5 text-sm tracking-[0.2em] uppercase text-muted-foreground transition-colors hover:text-marble"
             >
               Plan a darshan
             </Link>
           </div>
         </div>
-        <p className="absolute bottom-8 text-[0.65rem] tracking-[0.35em] uppercase text-muted-foreground">
+        <p className="absolute bottom-8 text-xs tracking-[0.35em] uppercase text-muted-foreground">
           Scroll
         </p>
       </section>
@@ -116,7 +111,7 @@ function Home() {
               style={{ transitionDelay: `${i * 120}ms` }}
             >
               <p className="eyebrow">{t.year}</p>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                 {t.text}
               </p>
             </div>
@@ -124,36 +119,14 @@ function Home() {
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="mx-auto max-w-6xl px-6 pb-28">
-        <div className="rule-gold mb-14" />
-        <div className="grid gap-4 sm:grid-cols-2">
-          {gallery.map((g) => (
-            <figure
-              key={g.alt}
-              className="group overflow-hidden rounded-lg border border-border/60"
-            >
-              <img
-                src={g.src}
-                alt={g.alt}
-                loading="lazy"
-                width={1600}
-                height={912}
-                className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </figure>
-          ))}
-        </div>
-      </section>
 
-      {/* Closing */}
       <section className="relative overflow-hidden border-y border-border/50 py-24 text-center">
         <div className="mx-auto max-w-2xl px-6">
           <p className="eyebrow">Darshan</p>
           <h2 className="mt-4 text-4xl text-marble">
             The dwar opens at 5:30 in the morning
           </h2>
-          <p className="mt-4 text-sm text-muted-foreground">
+          <p className="mt-4 text-base text-muted-foreground">
             Evening aarti at 8:10 PM. Bhojanshala, upashrays and rooms are
             available for pilgrims.
           </p>
@@ -161,7 +134,7 @@ function Home() {
             href={temple.directions}
             target="_blank"
             rel="noreferrer"
-            className="mt-8 inline-block rounded-full border border-primary/50 px-6 py-2.5 text-xs tracking-[0.2em] uppercase text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+            className="mt-8 inline-block rounded-full border border-primary/50 px-6 py-2.5 text-sm tracking-[0.2em] uppercase text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
           >
             Get directions
           </a>
