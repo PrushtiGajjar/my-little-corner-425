@@ -21,6 +21,7 @@ export function IdolStage() {
   const { ref, progress } = useScrollProgress<HTMLDivElement>();
   const count = chapters.length;
   const active = Math.min(count - 1, Math.floor(progress * count));
+  const current = chapters[active] ?? chapters[0];
 
   // Idol grows through the story, blazing at the revelation chapter.
   const scale = 0.62 + progress * 0.5;
@@ -130,10 +131,10 @@ export function IdolStage() {
 
           {/* Mobile: copy under the idol */}
           <div className="absolute inset-x-0 bottom-10 px-6 text-center md:hidden">
-            <p className="eyebrow">{chapters[active].eyebrow}</p>
-            <h2 className="mt-2 text-3xl text-marble">{chapters[active].title}</h2>
+            <p className="eyebrow">{current.eyebrow}</p>
+            <h2 className="mt-2 text-3xl text-marble">{current.title}</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {chapters[active].body}
+              {current.body}
             </p>
           </div>
         </div>
